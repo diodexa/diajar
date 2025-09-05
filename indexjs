@@ -1,0 +1,181 @@
+// scroll 
+window.addEventListener('scroll', () => {
+        const scrollY = window.scrollY;
+        document.querySelector('.flowers').style.backgroundPosition =
+            `${-70}px ${scrollY * 0.5}px, calc(100% + 70px) ${scrollY * 0.5}px`;
+    });
+
+// buka undangan
+
+const rootElement = document.querySelector(":root");
+const audioiconwrapper = document.querySelector('.audio-icon-wrapper');
+const audioIcon = document.querySelector('.audio-icon-wrapper i')
+const song = document.querySelector ('#song') ;
+const isScroll = document.querySelector('.flowers');
+const awal = document.getElementById('hero');
+const latar = document.getElementById('bungaLatar');
+let isPlaying = false;
+
+
+function disableScroll() {
+const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+window.onscroll = function () {
+window.scrollTo(scrollTop, scrollLeft);
+}
+
+
+rootElement.style.scrollBehavior = 'auto';
+}
+
+function enableScroll(e) {
+  if (e) e.preventDefault();
+  latar.style.display="block";
+  isScroll.style.display = "flex";
+
+  window.onscroll = null;
+  document.body.style.overflow = "";
+  document.documentElement.style.overscrollBehavior = "auto";
+  
+
+  // reset awal
+  gsap.set("#home h2, #home h3, #home #perempuan, #home #laki-laki, .flowers, .bungaLatar", { opacity: 0 });
+
+  let tl = gsap.timeline({
+    onComplete: () => {
+      rootElement.style.scrollBehavior = "smooth";
+      document.querySelector("#home").scrollIntoView({ behavior: "smooth" });
+      playAudio();
+      document.getElementById("hero").remove();
+    }
+  });
+
+  // hero keluar
+  tl.to("#hero", {
+    opacity: 0,
+    y: -150,
+    duration: 1,
+    ease: "power2.inOut"
+  })
+
+  // animasi h2
+  .to("#home h2", {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  })
+
+  // animasi h3
+  .to("#home h3", {
+    x: 0,
+    opacity: 1,
+    duration: 1,
+    ease: "power2.out"
+  }, "-=0.5")
+
+  // animasi row couple mt-5 (fade in + scale)
+  tl.fromTo("#home #perempuan",
+    { opacity: 0, x: 100  },
+    {
+      x:0,
+      opacity: 1,
+      duration: 1,
+      ease: "back.out(1.7)"
+    },
+  "-=0.5"
+  )
+
+   tl.fromTo("#home #laki-laki",
+    { opacity: 0, x: -100  },
+    {
+      x:0,
+      opacity: 1,
+      duration: 1,
+      ease: "back.out(1.7)"
+    },
+    "-=0.5"
+  )
+
+  // animasi flowers muncul dari bawah
+ // animasi flowers muncul dari bawah
+tl.fromTo(".flowers ",
+  { y: "-100vh", opacity:1 },  // nilai awal
+  { y: 0, opacity: 1, duration: 2, ease: "power2.inout" },  // nilai akhir
+  // mulai sedikit sebelum row couple selesai
+)
+}
+
+tl.to(".bungaLatar", {
+  opacity: 1,
+  duration: 0.5,
+  ease: "power2.out"
+})
+.to(".bungaLatar", {
+  scale: 1.2,          // zoom in
+  rotation: 45,         // rotate
+  x: 100,               // geser ke kanan
+  y: -50,               // geser ke atas
+  duration: 2,
+  ease: "power1.inOut"
+});
+
+
+
+
+function playAudio() {
+
+song.volume = 0.1;
+audioiconwrapper.style.display = 'flex';
+song.play();
+isPlaying = true;
+}
+
+audioiconwrapper.onclick = function() {
+if (isPlaying) {
+    song.pause();
+    audioIcon.classList.remove('bi-disc');
+    audioIcon.classList.add('bi-pause-circle');
+} else{
+    song.play();
+    audioIcon.classList.add('bi-disc');
+    audioIcon.classList.remove('bi-pause-circle');
+}
+
+isPlaying = !isPlaying;
+}
+
+disableScroll();
+
+// form
+window.addEventListener("load", function() {
+const form = document.getElementById('my-form');
+form.addEventListener("submit", function(e) {
+e.preventDefault();
+const data = new FormData(form);
+const action = e.target.action;
+fetch(action, {
+    method: 'POST',
+    body: data,
+})
+.then(() => {
+    alert("Terima kasih udah konfirmasi!");
+})
+});
+});
+
+// hero nama
+
+const urlParams = new URLSearchParams(window.location.search);
+const nama = urlParams.get('n') || '';
+const pronoun = urlParams.get('p') || 'Bapak/Ibu/Saudara/i';
+
+const namaContainer = document.querySelector('.hero h2');
+namaContainer.innerText = `${pronoun} ${nama}`.replace(/,$/,',')
+
+
+// Daftarkan plugin ScrollTrigger
+
+
+// Animasi untuk Informasi Acara saat masuk ke dalam viewport
