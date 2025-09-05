@@ -1,0 +1,182 @@
+*/animasi/*
+gsap.registerPlugin(ScrollTrigger);
+window.addEventListener("resize", () => {
+  ScrollTrigger.refresh();
+});
+// Animasi untuk Ayat saat masuk ke dalam viewport
+gsap.from(".ayat", {
+  x: 50,
+  opacity: 0,
+  duration: 0.5,
+  delay :1,
+  ease: "power3.inout",
+  scrollTrigger: {
+    trigger: ".ayat h3", // Elemen yang akan memicu animasi
+    start: "top 100%", // Pemicu aktif saat bagian atas elemen 80% dari viewport
+    end : "bottom 10%",
+    toggleActions: "play reverse play reverse",
+    markers: true,
+  }
+});
+
+gsap.from(".info h2" , {
+  x:-100,
+  opacity:0,
+  duration: 0.5,
+  delay : 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".info h2",
+    start: "bottom 50%",
+    toggleActions : "play reverse play reverse",
+    markers: true 
+  }
+});
+gsap.from(".info h3, .Alamat", {
+  yPercent: 100,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".info h3, .Alamat",
+    start: "bottom 50%",
+   
+    toggleActions: "play reverse play reverse",
+    markers: true 
+  }
+});
+
+gsap.from(".info a, .description",  {
+  scale: 0.2,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.in",
+  scrollTrigger: {
+    trigger: ".info a, .description",
+    start: "bottom 50%",
+   
+    toggleActions: "play reverse play reverse",
+  }
+});
+
+gsap.from(".card",  {
+  scale: 0.2,
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".card",
+    start: "top 80%",
+    end : "bottom 10%",
+    toggleActions: "play reverse play reverse"
+  }
+});
+
+gsap.from(".simply-countdown-circle",  {
+  opacity: 0,
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".simply-countdown-circle",
+    start: "top 80%",
+    toggleActions: "play reverse play reverse"
+  }
+});
+
+gsap.from(".story h2, .story .col-med-8 span, .story .col-med-8 p", {
+  x:-100,
+  opacity:0,
+  duration: 0.5,
+  delay : 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".story h2, .story .col-med-8 span, .story .col-med-8 p",
+    start: "top 100%",
+    toggleActions : "play reverse play reverse",
+    markers: true 
+  }
+});
+
+gsap.from(".timeline-image", {
+  x:-100,
+  opacity:0,
+  duration: 0.5,
+  delay : 1,
+  ease: "power3.in",
+  scrollTrigger: {
+    trigger: ".timeline-image",
+    start: "top 100%",
+    toggleActions : "play reverse play reverse",
+    markers: true,
+    invalidateOnRefresh: true
+  }
+});
+
+
+
+gsap.from(".timeline-panel", {
+  x:100,
+  opacity:0,
+  duration: 0.5,
+  delay : 1,
+  ease: "power3.in",
+  scrollTrigger: {
+    trigger: ".timeline-panel",
+    start: "top 90%",
+    toggleActions : "play reverse play reverse",
+    markers: true 
+  }
+});
+
+gsap.from(".galery h2", {
+  scale :0.2,
+  opacity:0,
+  duration: 0.5,
+  delay : 1,
+  ease: "power3.in",
+  scrollTrigger: {
+    trigger: ".galery h2",
+    start: "top 90%",
+    toggleActions : "play reverse play reverse",
+    markers: true 
+  }
+});
+
+gsap.from(".galery img", {
+  scale :0.2,
+  opacity:0,
+  duration: 0.5,
+  delay : 1,
+  ease: "power3.in",
+  scrollTrigger: {
+    trigger: ".galery img",
+    start: "top 80%",
+    toggleActions : "play none play none",
+    markers: true 
+  }
+});
+
+// Set posisi awal bunga
+gsap.set(".bungaLatar", {
+  opacity: 0,
+  scale: 0.5,
+  rotation: 0,
+  x: 0,
+  y: 0
+});
+
+
+let tlBunga = gsap.timeline();
+
+tlBunga.to(".bungaLatar", {
+  opacity: 1,
+  duration: 0.5,
+  ease: "power2.out"
+})
+.to(".bungaLatar", {
+  scale: 1.2,          // zoom in
+  rotation: 45,         // rotate
+  x: 100,               // geser ke kanan
+  y: -50,               // geser ke atas
+  duration: 2,
+  ease: "power1.inOut"
+});
