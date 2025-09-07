@@ -26,14 +26,8 @@
 }
 
 
-body{
-    font-size: 1.2rem;
-    font-family: "Work Sans", sans-serif;
-    min-height: 2000px;
-    overflow-y: scroll;
-    caret-color: transparent;
-    overflow-x: hidden;
-    width: 100%;
+body, html {
+  overflow-x: hidden;
 }
 
 #scrollThumb {
@@ -77,9 +71,10 @@ display: none;
 
 
 #hero {
-  position: fixed;
-  width: 100%;
-  height: 100vh;
+    position: fixed;
+
+  height: 100vh; /* biar fix 1 layar penuh */
+  max-width: 100vw; /* pastikan ga melar */
   overflow: hidden;
   transition: opacity 1s ease, transform 3s ease;
 }
@@ -150,6 +145,42 @@ display: none;
     display: none;
 }
 
+.homeh2 {
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1s ease;
+}
+.homeh2.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+.homeh3 {
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1s ease;
+}
+.homeh3.show {
+  transform: translateY(0);
+  opacity: 1;
+}
+#perempuan {
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1s ease;
+}
+#perempuan.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+#laki-laki {
+    transform: translateX(100%);
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1s ease;
+}
+#laki-laki.show {
+  transform: translateX(0);
+  opacity: 1;
+}
 
  .home, 
  .ayat , 
@@ -161,8 +192,6 @@ display: none;
  
     min-height: 100vh;
     padding-top: 7rem;
-
-  
 }
 
 
@@ -185,7 +214,7 @@ display: none;
  .ayat h3,
  .info h3{
     color:#444;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-shadow:0 1px 7px white;
 }
 
@@ -226,8 +255,8 @@ display: none;
 .ayat{
 
     pointer-events: none;
-    animation: autoShowAnimation;
-    animation-timeline: view(40% 30%);
+    animation: autoShowAnimation both;
+    animation-timeline: view(70% 5%);
 }
 .simply-countdown-circle {
     padding-bottom: 2rem;
@@ -495,7 +524,7 @@ footer li a {
 /* laptop */
 @media screen and  (min-width: 1024px) {
     html{
-        font-size: 110%;
+        font-size: 120%;
     }
     .simply-countdown-circle > .simply-section {
         width: 150px !important;
@@ -514,4 +543,7 @@ footer li a {
     .home img {
     width: 110%;  
 }
+.hero-bg {
+    background-size: contain; /* di HP biar ga terpotong */
+  }
 } 
