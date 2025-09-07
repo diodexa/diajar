@@ -45,19 +45,21 @@
     <div class="container" >
       <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-          <h2>بسم الله الرحمن الرحيم</h2>
+          <h2 class="homeh2">بسم الله الرحمن الرحيم</h2>
+          <div class="homeh3">
           <h3>Assalamualaikum Wr. Wb. </h3>
           <h3> Tanpa mengurangi rasa hormat, kami bermaksud mengundang Bapak/Ibu/Saudar/i pada acara pernikahan kami</h3>
+          </div>
         </div>
       
       <div class="row couple mt-5">
-        <div class="col-lg-6">
+        <div class="col-lg-6" id="perempuan">
           <div class="row">
-            <div class="col-8 text-end" id="perempuan">
+            <div class="col-8 text-end">
               <h3> Haryati</h3>
               <p> Putri dari Bapak Harjono <br>dan <br> Ibu Rojiah</p>
             </div>
-            <div class="col-4" id="perempuan">
+            <div class="col-4">
               <img src="img/Haryati.png" alt="Haryati" class="img-responsive rounded-circle" >
             </div>
           </div>
@@ -67,7 +69,7 @@
             <div class="col-4">
               <img src="img/Dio.png" alt="Dio" class="img-responsive rounded-circle">
             </div>
-            <div class="col-8" id="laki-laki">
+            <div class="col-8">
               <h3> Dio Deska</h3>
               <p> Putra dari Bapak Sony <br>dan <br> Ibu Waode</p>
             </div>
