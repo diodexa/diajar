@@ -1,7 +1,6 @@
-# diajar
-*/HTML/*
 
-<!doctype html>
+
+<html>
 <html lang="en">
   <head>
     
@@ -28,7 +27,8 @@
   <div class="flowers"style="display: none"></div>
   <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center align-item-center text-white">
       <main>
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+        </div>
         <div class="hero-content">
           <h4> The Wedding Of</h4>
           <h1> Haryati & Dio</h1>
@@ -384,7 +384,7 @@ import simplyCountdown from './countdown/simplyCountdown.js';
 <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
 
 <script src="index.js"></script>
-<script src="animasi.js"></script>
+<!-- <script src="animasi.js"></script> -->
 
 </body>
 </html>
