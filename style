@@ -65,8 +65,14 @@ display: none;
     background-size: 180px auto, 180px auto;
     z-index: 5;
     filter: drop-shadow(0 0 20px rgba(0,0,0,0.5));
-    will-change: background-position;
+    transform: translateY(-100%);
+    opacity: 0;
+    transition: transform 1.5s ease, opacity 1s ease;
     
+}
+.flowers.show {
+  transform: translateY(0);
+  opacity: 1;
 }
 
 
