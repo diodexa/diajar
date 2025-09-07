@@ -24,7 +24,7 @@
 
   </head>
 <body>
-  <div class="flowers"style="display: none"></div>
+  
   <section id="hero" class="hero w-100 h-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center align-item-center text-white">
       <main>
         <div class="hero-bg">
@@ -40,7 +40,7 @@
         
   </section>
   <div class="background"> 
-      
+      <div class="flowers" ></div>
   <section id="home" class="home">
     <div class="container" >
       <div class="row justify-content-center">
