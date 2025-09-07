@@ -42,8 +42,16 @@ function enableScroll() {
     hero.remove();
 
     const flowers = document.querySelector(".flowers");
+    const bismillah = document.querySelector(".homeh2");
+    const h3 = document.querySelector(".homeh3");
+    const Wanita = document.getElementById("perempuan");
+    const Pria = document.getElementById("laki-laki");
     flowers.classList.add("show");
-  }, 1000); // delay sama dengan durasi fade-out css hero
+    bismillah.classList.add("show");
+    h3.classList.add("show");
+    Wanita.classList.add("show");
+    Pria.classList.add("show");
+}, 1000); // delay sama dengan durasi fade-out css hero
 }
 
 function playAudio() {
