@@ -54,6 +54,8 @@ function enableScroll() {
 }, 1000); // delay sama dengan durasi fade-out css hero
 }
 
+
+
 function playAudio() {
 
 song.volume = 0.1;
@@ -106,6 +108,22 @@ namaContainer.innerText = `${pronoun} ${nama}`.replace(/,$/,',')
 
 
 // Daftarkan plugin ScrollTrigger
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.from(".ayat h3", {
+  y: 100,
+  scale: 0.3,
+  opacity: 0,
+  duration: 1,
+  scrollTrigger: {
+    trigger: ".ayat h3",
+    start: "top 70%",
+    end: "top 5%",
+    scrub: true // kalau mau smooth ikutin scroll
+    // toggleActions: "play none none reverse" // kalau mau sekali main balik
+  }
+});
+
 
 
 // Animasi untuk Informasi Acara saat masuk ke dalam viewport
