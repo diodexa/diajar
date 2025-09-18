@@ -19,6 +19,7 @@
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="countdown/circle.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.css"/>
 
 
 
@@ -84,17 +85,17 @@
       
   </section>
 
+  <div class="backgroundAtas"></div>
   <section id="ayat" class="ayat">
-    
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-md-8 text-center">
-    
-          <h3>“Dan diantara tanda-tanda kekuasaanNya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikanNya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.”</h3>
-          <h3>(Qs. Ar. Rum (30) : 21)</h3>
-          
+          <h3>“Dan diantara tanda-tanda kekuasaanNya ialah Dia menciptakan untukmu isteri-isteri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikanNya diantaramu rasa kasih dan sayang. Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda bagi kaum yang berpikir.” <br>(Qs. Ar. Rum (30) : 21)</h3>     
         </div>
+      </div>
+    </div>
   </section>
+  <div class="backgroundBawah"></div>
 
   
   <section id="info" class="info">
@@ -225,49 +226,54 @@
         <div class="col-md-8 col-10 text-center">
           <h2> Galeri Foto</h2>
         </div>
+        <div class="gallery-wrapper">
+        <div class="gallery-scroll">
         <div class="row row-cols-lg-5 row-cols-md-4 row-cols-sm-3 row-cols-2 justify-content-center">
           <div class="col mt-3">
-            <a href="img/galeryfoto/1.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery" >
+            <a href="img/galeryfoto/1.png" data-fancybox="gallery" >
             <img src="img/galeryfoto/thumbnail/1.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/2.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/2.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/2.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/3.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/3.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/3.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/4.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/4.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/4.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/5.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/5.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/5.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/6.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/6.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/6.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/7.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/7.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/7.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
           <div class="col mt-3">
-            <a href="img/galeryfoto/8.png" data-toggle="lightbox" data-size="fullscreen" data-gallery="Mygallery">
+            <a href="img/galeryfoto/8.png" data-fancybox="gallery">
             <img src="img/galeryfoto/thumbnail/8.png" alt="haya & dio 1" class="img-fluid w-100 rounded">
             </a>
           </div>
         </div>
+        </div>
+        </div>
       </div>
+  </div>
   </section>  
 
   <Section id="rsvp" class="rsvp">
@@ -383,10 +389,15 @@ import simplyCountdown from './countdown/simplyCountdown.js';
   });
       
 </script>
-<script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.5/dist/index.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@6.0/dist/fancybox/fancybox.umd.js"></script>
+    <script>
+      Fancybox.bind('[data-fancybox="gallery"]', {
+        //
+      });    
+    </script>
 
 <script src="index.js"></script>
-<!-- <script src="animasi.js"></script> -->
+<script src="animasi.js"></script>
 
 </body>
 </html>
